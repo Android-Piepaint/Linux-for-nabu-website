@@ -12,9 +12,7 @@ This document is a guide for installing Ubuntu Linux on your Xiaomi Mi Pad 5 wit
 
 ### Download images
 
-You can get a copy of Ubuntu image in this site for free:
-
-{% embed url="https://mega.nz/folder/CVMGEAiB#7oazR3wpkKdAH2eZChtRTg" %}
+You can get a copy of Ubuntu image in the "[Download](../download/resource-download.md)" section for free.
 
 Download them and continue reading...
 
@@ -246,9 +244,10 @@ Android stores your data inside the `userdata` partition. When you reset your An
 
 
 
-{% hint style="warning" %}
-<pre><code><a data-footnote-ref href="#user-content-fn-2">If you added "ext4" behind the "userdata" text, your data will be erased when you reboot. </a>
-</code></pre>
+{% hint style="danger" %}
+```svg
+If you added "ext4" behind the "userdata" text, your data will be erased when you reboot. 
+```
 {% endhint %}
 
 
@@ -389,5 +388,3 @@ fastboot flash partition_name /path/to/rootfs.img
 Finally, reboot and you are ready to rock!
 
 [^1]: 
-
-[^2]: 
