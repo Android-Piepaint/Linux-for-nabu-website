@@ -18,6 +18,10 @@
 * [Orangefox Recovery image (NO UI)](https://drive.google.com/file/d/1gCNtoDMNCAmMR61xegvCC3mxv28gMJbi/view?usp=drive\_link)
 * [Download TWRP Recovery](https://sourceforge.net/projects/xiaomi-pad-5/files/TWRP/Android%2014/)
 
+## Troubleshooting
+
+* [❕ Generic troubleshooting](troubleshooting/generic-troubleshooting.md)
+
 ## External links
 
 * [Ubuntu on Mi Pad 5 ](https://xdaforums.com/t/rom-ubuntu-on-xiaomi-pad-5-nabu.4597149/)
