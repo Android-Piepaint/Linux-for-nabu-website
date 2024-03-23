@@ -1,4 +1,4 @@
-# 😀 Install Ubuntu on your tablet
+# Install Ubuntu on your tablet
 
 This document is a guide for installing Ubuntu Linux on your Xiaomi Mi Pad 5 with the latest mainline kernel.
 
