@@ -241,9 +241,7 @@ fastboot flash boot /path/to/image
 
 #### Install GRUB on Ubuntu​
 
-Install GRUB tools and generate RAM diskgenerate grub configuration file:
-
-Gener
+Install GRUB tools and generate RAM disk：
 
 ```bash
 sudo apt-get install grub2-common grub-efi
@@ -254,8 +252,6 @@ sudo grub-install --target=arm64-efi --boot-directory=/boot
 sudo apt install initramfs-tools
 mkinitramfs -o /boot/initrd.img 6.1.10-nabu
 ```
-
-GenerGenera
 
 Generate GRUB configuration file:
 
