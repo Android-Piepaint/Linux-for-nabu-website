@@ -20,7 +20,7 @@ layout:
 
 # It's Linux, On Mi Pad 5.
 
-<figure><img src=".gitbook/assets/nabulinux.png" alt=""><figcaption><p>The fatest tablet all the time.</p></figcaption></figure>
+<figure><img src=".gitbook/assets/archnabu (1).png" alt="A  designed picture showing a tablet is running Arch Linux. "><figcaption><p>The fastest tablet all the time.</p></figcaption></figure>
 
 We are sick of not receiving updates shortly after buying new tablets. Sick of the walled gardens deeply integrated into Android and iOS, and the old, end-of-life downstream kernel released by devices' vendor. That's why we are developing a sustainable, privacy and security focused free software mobile OS that is modeled after traditional Linux distributions. With privilege separation in mind. Let's keep our tablet useful and safe until it physically break!
 
