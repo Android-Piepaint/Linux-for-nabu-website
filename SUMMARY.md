@@ -17,6 +17,7 @@
 * [Download Ubuntu & Arch Linux ARM](https://mega.nz/folder/CVMGEAiB#7oazR3wpkKdAH2eZChtRTg)
 * [Orangefox Recovery image (NO UI)](https://drive.google.com/file/d/1gCNtoDMNCAmMR61xegvCC3mxv28gMJbi/view?usp=drive\_link)
 * [Download TWRP Recovery](https://sourceforge.net/projects/xiaomi-pad-5/files/TWRP/Android%2014/)
+* [Download Fedora Linux](https://timoxa0.su/share/nabu/images/fedora.img.xz)
 
 ## Troubleshooting
 
