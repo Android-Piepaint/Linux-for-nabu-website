@@ -43,4 +43,6 @@ We are sick of not receiving updates shortly after buying new tablets. Sick of t
 
 {% embed url="https://github.com/timoxa0/Guide-Linux-Nabu/tree/main" %}
 
-{% embed url="https://github.com/orgs/inofficial-linux-on-nabu/repositories" %}
+{% embed url="https://github.com/TheMojoMan/Xiaomi-Nabu" %}
+
+{% embed url="https://github.com/maverickjb/linux-6.1.10" %}

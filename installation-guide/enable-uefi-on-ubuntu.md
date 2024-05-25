@@ -21,6 +21,10 @@ Systems which use device trees usually pass a static device tree (perhaps stored
 On Renegade Project's UEFI firmware, the device tree is used when your device is booting Linux kernel via EFI stub. To get the device tree file, we need to look up it in kernel repository. So open your terminal, and type this command, it will simply download the whole repository and store it on your disk:
 
 ```bash
+git clone https://github.com/maverickjb/linux-6.1.10.git
+```
+
+```bash
 git clone https://github.com/map220v/sm8150-mainline.git
 ```
 
@@ -79,7 +83,7 @@ Simply enter these commands on terminal:
 
 {% code overflow="wrap" fullWidth="true" %}
 ```bash
-make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- defconfig
+make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu xiaomi_nabu_maverick_defconfig
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- Image.gz dtbs
 make ARCH=arm64 install INSTALL_PATH=../install/boot
 make ARCH=arm64 dtbs_install INSTALL_DTBS_PATH=../install/boot/dtbs
