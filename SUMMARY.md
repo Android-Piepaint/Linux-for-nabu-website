@@ -9,13 +9,13 @@
 ## Installation guide
 
 * [Install Ubuntu on your tablet](installation-guide/install-ubuntu-on-your-tablet.md)
-* [Enable UEFI on Ubuntu](installation-guide/enable-uefi-on-ubuntu.md)
+* [Enable UEFI on any Linux distributions](installation-guide/enable-uefi-on-any-linux-distributions.md)
 
 ## Download
 
 * [Resource download](download/resource-download.md)
 * [Download Ubuntu & Arch Linux ARM](https://mega.nz/folder/CVMGEAiB#7oazR3wpkKdAH2eZChtRTg)
-* [Orangefox Recovery image (NO UI)](https://drive.google.com/file/d/1gCNtoDMNCAmMR61xegvCC3mxv28gMJbi/view?usp=drive\_link)
+* [Orangefox Recovery image (NO UI)](https://drive.google.com/file/d/1gCNtoDMNCAmMR61xegvCC3mxv28gMJbi/view?usp=drive_link)
 * [Download TWRP Recovery](https://sourceforge.net/projects/xiaomi-pad-5/files/TWRP/Android%2014/)
 * [Download Fedora Linux](https://timoxa0.su/share/nabu/images/fedora.img.xz)
 
@@ -27,5 +27,5 @@
 
 * [Ubuntu on Mi Pad 5 ](https://xdaforums.com/t/rom-ubuntu-on-xiaomi-pad-5-nabu.4597149/)
 * [Arch Linux on Mi Pad 5](https://xdaforums.com/t/rom-arch-linux-on-xiaomi-pad-5-nabu.4649938/)
-* [GitHub Repository](https://github.com/orgs/inofficial-linux-on-nabu/repositories)
+* [GitLab Repository](https://gitlab.postmarketos.org/panpanpanpan/sm8150-mainline.git)
 * [Write your links here!](external-links/write-your-links-here.md)

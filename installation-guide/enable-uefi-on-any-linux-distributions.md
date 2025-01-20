@@ -2,13 +2,13 @@
 description: A simple user guide helps you to enable UEFI boot on your tablet.
 ---
 
-# Enable UEFI on Ubuntu
+# Enable UEFI on any Linux distributions
 
 
 
 ### Get the Device Tree config file
 
-In [computing](https://en.wikipedia.org/wiki/Computing), a devicetree (also written device tree) is a [data structure](https://en.wikipedia.org/wiki/Data\_structure) describing the hardware components of a particular computer so that the [operating system](https://en.wikipedia.org/wiki/Operating\_system)'s [kernel](https://en.wikipedia.org/wiki/Kernel\_\(operating\_system\)) can use and manage those components, including the [CPU](https://en.wikipedia.org/wiki/Central\_processing\_unit) or CPUs, the [memory](https://en.wikipedia.org/wiki/Computer\_memory), the [buses](https://en.wikipedia.org/wiki/Bus\_\(computing\)) and the [integrated peripherals](https://en.wikipedia.org/wiki/Integrated\_peripheral).
+In [computing](https://en.wikipedia.org/wiki/Computing), a devicetree (also written device tree) is a [data structure](https://en.wikipedia.org/wiki/Data_structure) describing the hardware components of a particular computer so that the [operating system](https://en.wikipedia.org/wiki/Operating_system)'s [kernel](https://en.wikipedia.org/wiki/Kernel_\(operating_system\)) can use and manage those components, including the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) or CPUs, the [memory](https://en.wikipedia.org/wiki/Computer_memory), the [buses](https://en.wikipedia.org/wiki/Bus_\(computing\)) and the [integrated peripherals](https://en.wikipedia.org/wiki/Integrated_peripheral).
 
 
 
@@ -25,8 +25,16 @@ git clone https://github.com/maverickjb/linux-6.1.10.git
 ```
 
 ```bash
-git clone https://github.com/map220v/sm8150-mainline.git
+git clone https://gitlab.postmarketos.org/panpanpanpan/sm8150-mainline.git
 ```
+
+{% hint style="warning" %}
+**NOTE**: **if you want to use the latest mainline kernel as daily driver:**
+
+* Driver for the PM8150B charger is broken in mainline, the only way to charge your tablet is by simply fixing the In8000\* fast charger driver for mainline. About the patch files, they're [located here](https://file.chyk.ink/Linux/nabu-patches), for fixing the charger, [see below](enable-uefi-on-any-linux-distributions.md#compile-the-linux-kernel);
+* Based on my personal tests, microphones are available, but unusable. Because the record volume is **extremely LOUD**, no matter which volume you've selected. If you keep using it (as for now), you will damage your ears and speakers !
+* Real time clock (RTC) is working, but a manual patch is required.
+{% endhint %}
 
 Once it finished, go to the repository's directory. We need to find the proper device tree file that ended with file extension name (\*.dts). It is stored under `arch/arm64/boot/dts` . `cd` into this directory, find the DTS file named "`sm8150-xiaomi-nabu.dts`".
 
@@ -63,7 +71,7 @@ The above command requires your system to have the correct `deb-src` lines in `/
 
 On Arch Linux(and distributions based on it):
 
-Install the [base-devel](https://archlinux.org/packages/?name=base-devel) [meta package](https://wiki.archlinux.org/title/Meta\_package), which pulls in necessary packages such as [make](https://archlinux.org/packages/?name=make) and [gcc](https://archlinux.org/packages/?name=gcc). It is also recommended to install the following packages, as listed in the default Arch kernel [PKGBUILD](https://gitlab.archlinux.org/archlinux/packaging/packages/linux/-/blob/main/PKGBUILD): [xmlto](https://archlinux.org/packages/?name=xmlto), [kmod](https://archlinux.org/packages/?name=kmod), [inetutils](https://archlinux.org/packages/?name=inetutils), [bc](https://archlinux.org/packages/?name=bc), [libelf](https://archlinux.org/packages/?name=libelf), [git](https://archlinux.org/packages/?name=git), [cpio](https://archlinux.org/packages/?name=cpio), [perl](https://archlinux.org/packages/?name=perl), [tar](https://archlinux.org/packages/?name=tar), [xz](https://archlinux.org/packages/?name=xz).
+Install the [base-devel](https://archlinux.org/packages/?name=base-devel) [meta package](https://wiki.archlinux.org/title/Meta_package), which pulls in necessary packages such as [make](https://archlinux.org/packages/?name=make) and [gcc](https://archlinux.org/packages/?name=gcc). It is also recommended to install the following packages, as listed in the default Arch kernel [PKGBUILD](https://gitlab.archlinux.org/archlinux/packaging/packages/linux/-/blob/main/PKGBUILD): [xmlto](https://archlinux.org/packages/?name=xmlto), [kmod](https://archlinux.org/packages/?name=kmod), [inetutils](https://archlinux.org/packages/?name=inetutils), [bc](https://archlinux.org/packages/?name=bc), [libelf](https://archlinux.org/packages/?name=libelf), [git](https://archlinux.org/packages/?name=git), [cpio](https://archlinux.org/packages/?name=cpio), [perl](https://archlinux.org/packages/?name=perl), [tar](https://archlinux.org/packages/?name=tar), [xz](https://archlinux.org/packages/?name=xz).
 
 ```bash
 sudo pacman -S base-devel make gcc git gcc-aarch64-linux-gnu
@@ -77,7 +85,16 @@ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- dtbs
 
 You should have the Device tree files now.
 
-#### Compile the Linux kernel
+### Compile the Linux kernel
+
+Before you start your compilation, you need to patch the kernel for charger and RTC feature.
+
+Navigate to your kernel repository to continue:
+
+```bash
+git apply /path/to/rtc.patch        #For RTC.
+mv /path/to/ln8000_charger.c drivers/power/supply        #For charger.
+```
 
 Simply enter these commands on terminal:
 
@@ -243,7 +260,41 @@ You will receive a boot image. Flash it to `boot` partition:
 fastboot flash boot /path/to/image
 ```
 
+Then, install GRUB onto your disk in your Linux distributions:
+
+For Ubuntu and other Debian-based distributions:
+
+```bash
+sudo apt install grub-efi grub2-common efibootmgr
+sudo grub-install --target=arm64-efi --boot-directory=/boot
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+For Arch Linux and Arch-based:
+
+```bash
+sudo pacman -S grub efibootmgr
+sudo grub-install --target=arm64-efi --boot-directory=/boot
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+For Alpine and Alpine-based:
+
+```bash
+sudo apk add grub grub-efi efibootmgr
+sudo grub-install --target=arm64-efi --boot-directory=/boot
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+### Ubuntu specifics
+
 #### Install GRUB on Ubuntu​
+
+
+
+{% hint style="info" %}
+On recent Ubuntu images, these steps are no longer needed.
+{% endhint %}
 
 Install GRUB tools and generate RAM disk：
 
