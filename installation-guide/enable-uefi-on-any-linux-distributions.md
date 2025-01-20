@@ -90,7 +90,7 @@ You should have the Device tree files now.
 {% hint style="success" %}
 Why you need to fix In8000 charger for `nabu` ?
 
-Well, basically, it's a **pun.** You have a tabled powered by a Li-Lon Battery, and we often call them "E-tablet". As for `nabu`, it's an E-tablet, it's a charge-er ! Get it?
+Well, basically, it's a **pun.** You have a tabled powered by a Li-Lon Battery, and we often call them "E-tablet". As for `nabu`, it's an E-tablet, it's a char-Ger ! Get it?
 {% endhint %}
 
 Before you start your compilation, you need to patch the kernel for charger and RTC feature.
