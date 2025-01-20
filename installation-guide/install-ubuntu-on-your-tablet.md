@@ -245,7 +245,7 @@ Android stores your data inside the `userdata` partition. When you reset your An
 
 
 {% hint style="danger" %}
-```svg
+```
 If you added "ext4" behind the "userdata" text, your data will be erased when you reboot. 
 ```
 {% endhint %}
@@ -318,7 +318,7 @@ Now we need to check which slot Android is installed.
 
 
 {% hint style="info" %}
-**NOTE:** The concept of "slot"  probably unfamiliar for you, since it was included in Android 10 as a feature, which called "**Dynamic Partitions**". Dynamic partitions are a userspace partitioning system for Android. About its further infomations, [located here](https://source.android.com/docs/core/ota/dynamic\_partitions/implement).
+**NOTE:** The concept of "slot"  probably unfamiliar for you, since it was included in Android 10 as a feature, which called "**Dynamic Partitions**". Dynamic partitions are a userspace partitioning system for Android. About its further infomations, [located here](https://source.android.com/docs/core/ota/dynamic_partitions/implement).
 {% endhint %}
 
 You can check this infomation via `fastboot` . Command is listed below:
@@ -344,7 +344,7 @@ Now, we are ready to flash the system image. But before we start, we need to dis
 {% hint style="info" %}
 AVB is implementation of verified boot process, current version (since Android 8 Oreo) is called AVB 2.0. Verified boot is a process of assuring the end user of the integrity of the software running on a device. It typically starts with a read-only portion of the device firmware which loads code and executes it only after cryptographically verifying that the code is authentic. It also helps in implementing rollback protection.
 
-&#x20;More infomations and technical details, [located here.](https://wiki.postmarketos.org/wiki/Android\_Verified\_Boot\_\(AVB\))
+&#x20;More infomations and technical details, [located here.](https://wiki.postmarketos.org/wiki/Android_Verified_Boot_\(AVB\))
 {% endhint %}
 
 Flash the `vbmeta` with `vbmeta_disabled.img` to disable this feature:
