@@ -87,6 +87,12 @@ You should have the Device tree files now.
 
 ### Compile the Linux kernel
 
+{% hint style="success" %}
+Why you need to fix In8000 charger for `nabu` ?
+
+Well, basically, it's a **pun.** You have a tabled powered by a Li-Lon Battery, and we often call them "E-tablet". As for `nabu`, it's an E-tablet, it's a charge-er ! Get it?
+{% endhint %}
+
 Before you start your compilation, you need to patch the kernel for charger and RTC feature.
 
 Navigate to your kernel repository to continue:
@@ -100,7 +106,7 @@ Simply enter these commands on terminal:
 
 {% code overflow="wrap" fullWidth="true" %}
 ```bash
-make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu xiaomi_nabu_maverick_defconfig
+make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu xiaomi_nabu_maverick_defconfig    #For mainline kernel, its make defconfig sm8150.config
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- Image.gz dtbs
 make ARCH=arm64 install INSTALL_PATH=../install/boot
 make ARCH=arm64 dtbs_install INSTALL_DTBS_PATH=../install/boot/dtbs
