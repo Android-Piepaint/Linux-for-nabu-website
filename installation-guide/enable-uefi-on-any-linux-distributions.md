@@ -1,5 +1,6 @@
 ---
 description: A simple user guide helps you to enable UEFI boot on your tablet.
+icon: microchip
 ---
 
 # Enable UEFI on any Linux distributions

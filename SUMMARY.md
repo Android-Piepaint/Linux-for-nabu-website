@@ -4,12 +4,14 @@
 
 ## Status
 
-* [🖥️ Hardware support status](status/hardware-support-status.md)
+* [Hardware support status](status/hardware-support-status.md)
 
 ## Installation guide
 
-* [Install Ubuntu on your tablet](installation-guide/install-ubuntu-on-your-tablet.md)
+* [Generic installation guide](installation-guide/generic-installation-guide.md)
+* [Install Ubuntu on your tablet (Legacy images only)](installation-guide/install-ubuntu-on-your-tablet-legacy-images-only.md)
 * [Enable UEFI on any Linux distributions](installation-guide/enable-uefi-on-any-linux-distributions.md)
+* [Ubuntu installation guide ( New world images only)](installation-guide/ubuntu-installation-guide-new-world-images-only.md)
 
 ## Download
 

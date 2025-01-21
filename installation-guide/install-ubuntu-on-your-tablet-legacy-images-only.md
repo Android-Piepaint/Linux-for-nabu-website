@@ -1,4 +1,8 @@
-# Install Ubuntu on your tablet
+---
+icon: ubuntu
+---
+
+# Install Ubuntu on your tablet (Legacy images only)
 
 This document is a guide for installing Ubuntu Linux on your Xiaomi Mi Pad 5 with the latest mainline kernel.
 
@@ -254,7 +258,7 @@ If you added "ext4" behind the "userdata" text, your data will be erased when yo
 
 ### Install new system
 
-Enter fastboot mode and repeat the [previous steps](install-ubuntu-on-your-tablet.md#partition-the-ufs).
+Enter fastboot mode and repeat the [previous steps](install-ubuntu-on-your-tablet-legacy-images-only.md#partition-the-ufs).
 
 We'll use the free space for our Ubuntu installtion:
 

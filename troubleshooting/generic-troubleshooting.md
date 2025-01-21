@@ -30,7 +30,7 @@ This error will also take place when you flashed at least two `boot` images in d
 
 ### Black screen after kernel logs
 
-This means you didn't flash the rootfs image properly. Follow the [installation guide](../installation-guide/install-ubuntu-on-your-tablet.md) to flash it. If you don't have it, you can download it now.
+This means you didn't flash the rootfs image properly. Follow the [installation guide](../installation-guide/install-ubuntu-on-your-tablet-legacy-images-only.md) to flash it. If you don't have it, you can download it now.
 
 ### No console output when using UEFI to boot kernel
 

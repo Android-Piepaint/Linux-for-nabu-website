@@ -1,4 +1,8 @@
-# 🖥️ Hardware support status
+---
+icon: tablet
+---
+
+# Hardware support status
 
 This page shows the device's feature that is working in [mainline linux](https://github.com/map220v/sm8150-mainline) kernel.
 
